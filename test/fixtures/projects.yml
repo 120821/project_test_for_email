@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  mark: MyString
+  home: MyString
+  is_public: false
+  parent_project: 1
+  isInherit_Parent_Project_Members: false
+
+two:
+  name: MyString
+  description: MyText
+  mark: MyString
+  home: MyString
+  is_public: false
+  parent_project: 1
+  isInherit_Parent_Project_Members: false
