@@ -59,16 +59,18 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3333}
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
+    address:              'smtp.qq.com',
     port:                 587,
-    user_name:            '120821',
+    user_name:            '1208215066@qq.com',
     password:             'lzywicodftqoihja',
     authentication:       'plain',
-    enable_starttls_auto: true
+    enable_starttls_auto: true,
+    open_timeout: 5,
+    read_timeout: 5
   }
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true

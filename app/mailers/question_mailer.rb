@@ -1,4 +1,5 @@
 class QuestionMailer < ApplicationMailer
+  default from: ' 1208215066@qq.com'
   def question_assigned(question)
     @question = question
     @project = question.project
