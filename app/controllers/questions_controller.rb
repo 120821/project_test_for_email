@@ -25,6 +25,8 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
+        # 发送邮件通知任务成员
+        QuestionMailer.question_assigned(@question).deliver_now
         format.html { redirect_to question_url(@question), notice: "Question was successfully created." }
         format.json { render :show, status: :created, location: @question }
       else
@@ -65,6 +67,6 @@ class QuestionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def question_params
-      params.require(:question).permit(:title, :content, :status, :level, :assigned_to, :start_day)
+      params.require(:question).permit(:title, :content, :status, :level, :assigned_to, :start_day, :isInherit_Parent_Project_Members, :project_id)
     end
 end

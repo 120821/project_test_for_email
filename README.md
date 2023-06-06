@@ -166,3 +166,5 @@ bin  config.ru  delayed_job_demo2.txt  dump.rdb              Gemfile.lock  log  
 ```
 所以启动`RAILS_ENV=production bin/delayed_job start`命令后，再次增加任务，可以不用再次start.
 # project_test_for_email
+
+
