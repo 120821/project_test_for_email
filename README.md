@@ -59,3 +59,19 @@ Completed 302 Found in 23ms (ActiveRecord: 0.8ms | Allocations: 10869)
 
 
 ```
+rails c -e p
+Loading production environment (Rails 7.0.5)
+irb(main):001:0> QuestionMailer.question_assigned(a).deliver_now
+(irb):1:in `<main>': undefined local variable or method `a' for main:Object (NameError)
+irb(main):002:0> a = Question.last
+=>
+#<Question:0x00007fa5a97a9aa8
+...
+irb(main):003:0> QuestionMailer.question_assigned(a).deliver_now
+  Rendered question_mailer/question_assigned.html.erb within layouts/mailer (Duration: 0.6ms | Allocations: 254)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.1ms | Allocations: 499)
+Delivered mail 647f46e3342b3_795ddcd0-4dd@linlin-i5.mail (1622.1ms)
+=> #<Mail::Message:45740, Multipart: false, Headers: <Date: Tue, 06 Jun 2023 22:46:59 +0800>, <From:  1208215066@qq.com>, <To: 1208215066@qq.com>, <Message-ID: <647f46e3342b3_795ddcd0-4dd@linlin-i5.mail>>, <Subject: 您有一项新的任务 - #<Question:0x00007fa5a97a9aa8>>, <Mime-Version: 1.0>, <Content-Type: text/html>, <Content-Transfer-Encoding: quoted-printable>>
+irb(main):004:0>
+
+
