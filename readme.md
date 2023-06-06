@@ -99,5 +99,17 @@ undefined method `devise_for' for #<ActionDispatch::Routing::Mapper:0x00007fc638
 5. 增加邮件发送功能
 登录后可以创建project和question，目前css问题可以先放着。功能问题需要优先实现。
 首先创建两个user(注册), admin@linlin.com,以及qq邮箱(用来测试邮件发送).
-
+在`config/environments/development.rb` 和`config/environments/production.rb`文件增加
+```
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  user_name:            '<Gmail username>',
+  password:             '<Gmail password>',
+  authentication:       'plain',
+  enable_starttls_auto: true
+}
+```
 
